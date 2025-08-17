@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="book_list_template" name="Public Book List">
+        <t t-call="website.layout">
+            <div id="wrap" class="container">
+                <h1>Our Book Collection</h1>
+                <div class="list-group mt-4">
+                    <t t-foreach="books" t-as="book">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <span t-esc="book.name"/>
+                            <t t-if="book.author_id">
+                                <small class="text-muted"> by <span t-esc="book.author_id.name"/></small>
+                            </t>
+                        </a>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
