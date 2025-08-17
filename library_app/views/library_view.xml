@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
         <record id="view_library_model_form" model="ir.ui.view">
             <field name="name">library.model.form</field>
             <field name="model">library.model</field>
@@ -18,13 +20,32 @@
             </field>
         </record>
 
+        <record id="view_library_model_tree" model="ir.ui.view">
+            <field name="name">library.model.tree</field>
+            <field name="model">library.model</field>
+            <field name="arch" type="xml">
+                <tree string="Library Model">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
         <record id="action_library_model" model="ir.actions.act_window">
             <field name="name">Library Model</field>
             <field name="res_model">library.model</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="menu_library_root" name="Library App" sequence="10"/>
-        <menuitem id="menu_library_model" name="Library Model" parent="menu_library_root" action="action_library_model"/>
+        <menuitem
+            id="menu_library_root"
+            name="Library App"
+            sequence="10"/>
+
+        <menuitem
+            id="menu_library_model"
+            name="Library Model"
+            parent="menu_library_root"
+            action="action_library_model"/>
+
     </data>
 </odoo>
